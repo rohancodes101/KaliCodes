@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kali Learnings Form</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            resize: both; /* Allow users to resize the textarea */
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #04AA6D;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #039a5b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Kali Learnings Form</h1>
+    <form id="data-form">
+        <label for="command">Command:</label>
+        <input required type="text" id="command">
+        
+        <label for="description">Description:</label>
+        <input required type="text" id="description">
+        
+        <label for="comments">Comments:</label>
+        <textarea id="comments" rows="3"></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+    document.getElementById('data-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const command = document.getElementById('command').value;
+        const description = document.getElementById('description').value;
+        const comments = document.getElementById('comments').value;
+
+        const url = 'https://api.sheetapi.rest/api/v1/sheet/YjAewrnTeuc5L1zP0N7-v';
+        const options = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json', Accept: 'application/json'},
+            body: JSON.stringify({ Command: command, Description: description, Comments: comments })
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const data = await response.json();
+            console.log(data);
+
+            // Show success toast
+            Toastify({
+                text: "Data submitted successfully!",
+                duration: 1234,
+                gravity: "top", 
+                position: 'center',
+                backgroundColor: "#04AA6D",
+                stopOnFocus: true, 
+            }).showToast();
+
+            // Clear the form
+            document.getElementById('data-form').reset();
+        } catch (error) {
+            console.error(error);
+            
+            // Show error toast
+            Toastify({
+                text: "An error occurred while submitting data.",
+                duration: 3000,
+                gravity: "top",
+                position: 'center',
+                backgroundColor: "#FF5733",
+                stopOnFocus: true,
+            }).showToast();
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
