@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,14 +131,204 @@
 
 </body>
 </html>
+ -->
 
 
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elon Musk's Cosmic Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
+        body {
+            background: linear-gradient(135deg, #1a0933, #0d2b45);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+        }
 
+        .header h1 {
+            font-size: 3.5em;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
 
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00de; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff00de, 0 0 40px #00ffde; }
+        }
 
+        .timeline {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ff00de, #00ffde);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            width: 45%;
+            padding: 20px;
+            margin: 40px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 55%;
+        }
+
+        .timeline-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item h2 {
+            color: #00ffde;
+            margin-bottom: 10px;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #ff00de;
+            margin-top: 15px;
+            padding-left: 20px;
+            border-left: 3px solid #ff00de;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: #fff;
+            border-radius: 50%;
+            animation: float 10s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 0.8; }
+            50% { opacity: 0.4; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                margin-left: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Elon Musk's Cosmic Journey</h1>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item left">
+                <img src="https://images.unsplash.com/photo-162064641 hitchhiking-road" alt="Early Days">
+                <h2>1971-1995: The Beginning</h2>
+                <p>Born in South Africa, Elon taught himself coding at age 12 and sold his first game.</p>
+                <div class="quote">"When something is important enough, you do it even if the odds are not in your favor."</div>
+            </div>
+
+            <div class="timeline-item right">
+                <img src="https://images.unsplash.com/photo-1526374965328-50dd3577550d" alt="Zip2">
+                <h2>1995: Zip2</h2>
+                <p>Founded Zip2, sold to Compaq for $307 million in 1999.</p>
+                <div class="quote">"I think it is possible for ordinary people to choose to be extraordinary."</div>
+            </div>
+
+            <div class="timeline-item left">
+                <img src="https://images.unsplash.com/photo-1617791160505-6f00504e3519" alt="PayPal">
+                <h2>1999: X.com & PayPal</h2>
+                <p>Co-founded X.com, which became PayPal, sold to eBay for $1.5 billion in 2002.</p>
+                <div class="quote">"Persistence is very important. You should not give up unless you are forced to give up."</div>
+            </div>
+
+            <div class="timeline-item right">
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c8b2" alt="SpaceX">
+                <h2>2002: SpaceX</h2>
+                <p>Founded SpaceX to revolutionize space travel and make life multiplanetary.</p>
+                <div class="quote">"I would like to die on Mars. Just not on impact."</div>
+            </div>
+
+            <div class="timeline-item left">
+                <img src="https://images.unsplash.com/photo-1620288626110-1521ce48e9f2" alt="Tesla">
+                <h2>2004: Tesla</h2>
+                <p>Joined Tesla Motors, leading it to become a leader in electric vehicles.</p>
+                <div class="quote">"The first step is to establish that something is possible; then probability will occur."</div>
+            </div>
+
+            <div class="timeline-item right">
+                <img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679" alt="Richest Man">
+                <h2>2021: World's Richest</h2>
+                <p>Surpassed Jeff Bezos with a net worth over $200 billion, driven by Tesla and SpaceX success.</p>
+                <div class="quote">"I think it’s possible to do better than people think is possible."</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add floating particles
+        for (let i = 0; i < 50; i++) {
+            let particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = Math.random() * 5 + 5 + 's';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            document.body.appendChild(particle);
+        }
+    </script>
+</body>
+</html>
